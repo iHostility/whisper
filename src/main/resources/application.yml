@@ -1,0 +1,15 @@
+# Server
+server:
+  port: ${TEMPLATE_ENV_VAR_PORT:8080}
+  servlet:
+    context-path: /
+
+# Spring
+spring:
+  application:
+    name: '@project.artifactId@'
+
+# OpenAPI
+springdoc:
+  api-docs:
+    path: /api-docs
