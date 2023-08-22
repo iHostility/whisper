@@ -2,7 +2,7 @@
 <!--
   ~ Author: Voloshin Denis
   ~ Date: 22-08-2023
-  ~ Time: 18:13
+  ~ Time: 20:54
   ~ E-mail: voloshin.developer@gmail.com
   -->
 
@@ -12,7 +12,7 @@
 
     <groupId>su.hostile</groupId>
     <artifactId>whisper</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <name>whisper</name>
     <description>Проект для сбора технологий</description>
 
@@ -35,8 +35,8 @@
         <lombok.version>1.18.28</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <springdoc-openapi-starter-webmvc-ui.version>2.2.0</springdoc-openapi-starter-webmvc-ui.version>
-        <postgresql.version>42.2.19</postgresql.version>
-        <liquibase-core-version>4.7.1</liquibase-core-version>
+        <postgresql.version>42.2.24</postgresql.version>
+        <liquibase-core-version>4.23.1</liquibase-core-version>
         <!-- endregion-->
     </properties>
 

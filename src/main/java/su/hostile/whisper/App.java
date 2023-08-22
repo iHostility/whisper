@@ -18,8 +18,8 @@ import static org.springframework.boot.SpringApplication.run;
 public class App {
 
     static {
-        TimeZone.setDefault(TimeZone.getTimeZone("Etc/UTC"));
-        log.info("Default Timezone set to UTC");
+        TimeZone.setDefault(TimeZone.getTimeZone("Europe/Moscow"));
+        log.info("Default Timezone set to Europe/Moscow");
     }
 
     public static void main(String[] args) {

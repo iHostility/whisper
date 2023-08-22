@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Author: Voloshin Denis
+  ~ Date: 22-08-2023
+  ~ Time: 19:25
+  ~ E-mail: voloshin.developer@gmail.com
+  -->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
+
+    <changeSet id="22-08-2023--add-pgcrypto" author="d.voloshin">
+        <sql stripComments="true">
+            CREATE
+            EXTENSION IF NOT EXISTS pgcrypto SCHEMA public
+            <comment>Add pgcrypto (in schema public) for generate public.gen_random_uuid()</comment>
+        </sql>
+    </changeSet>
+</databaseChangeLog>

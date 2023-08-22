@@ -1,6 +1,6 @@
 # Server
 server:
-  port: ${TEMPLATE_ENV_VAR_PORT:8080}
+  port: ${WHISPER_SERVER_PORT:8080}
   servlet:
     context-path: /
 
@@ -8,6 +8,27 @@ server:
 spring:
   application:
     name: '@project.artifactId@'
+  #DB
+  datasource:
+    url: ${WHISPER_DB_URL}
+    username: ${WHISPER_DB_USERNAME}
+    password: ${WHISPER_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  #JPA
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    show-sql: ${WHISPER_SHOW_SQL:false}
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  #Liquibase
+  liquibase:
+    drop-first: false
+    change-log: classpath:db/changelog/db.changelog.xml
 
 # OpenAPI
 springdoc:

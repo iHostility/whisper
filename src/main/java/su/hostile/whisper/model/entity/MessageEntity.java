@@ -1,6 +1,7 @@
 package su.hostile.whisper.model.entity;
 
 import jakarta.annotation.Nullable;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -33,8 +34,8 @@ import java.util.Collection;
 public class MessageEntity extends AbstractEntity implements Serializable {
 
     @NotNull
-    @Column(name = "text", nullable = false)
-    private String text;
+    @Column(name = "message", nullable = false)
+    private String message;
 
     @NotNull
     @Column(name = "sign", nullable = false)
@@ -42,10 +43,13 @@ public class MessageEntity extends AbstractEntity implements Serializable {
 
     @Nullable
     @ManyToOne
-    @JoinColumn(name = "root")
-    private MessageEntity root;
+    @JoinColumn(name = "parent_id")
+    private MessageEntity parent_id;
 
     @Nullable
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            mappedBy = "parent_id")
     private Collection<MessageEntity> comments;
 }
