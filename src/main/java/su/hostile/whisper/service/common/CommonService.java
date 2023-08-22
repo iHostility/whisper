@@ -10,7 +10,7 @@ import java.util.UUID;
 /*
  * Author: Voloshin Denis
  * Date: 22-08-2023
- * Time: 18:13
+ * Time: 20:54
  * E-mail: voloshin.developer@gmail.com
  */
 public interface CommonService<E extends AbstractEntity> {

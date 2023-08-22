@@ -22,7 +22,7 @@ import java.util.Collection;
 /*
  * Author: Voloshin Denis
  * Date: 22-08-2023
- * Time: 18:13
+ * Time: 20:54
  * E-mail: voloshin.developer@gmail.com
  */
 @Entity
@@ -44,12 +44,12 @@ public class MessageEntity extends AbstractEntity implements Serializable {
     @Nullable
     @ManyToOne
     @JoinColumn(name = "parent_id")
-    private MessageEntity parent_id;
+    private MessageEntity parentId;
 
     @Nullable
-    @OneToMany(fetch = FetchType.LAZY,
+    @OneToMany(fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            mappedBy = "parent_id")
+            mappedBy = "parentId")
     private Collection<MessageEntity> comments;
 }

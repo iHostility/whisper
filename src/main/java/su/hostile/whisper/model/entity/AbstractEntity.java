@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -21,7 +22,7 @@ import java.util.UUID;
 /*
  * Author: Voloshin Denis
  * Date: 22-08-2023
- * Time: 18:13
+ * Time: 20:54
  * E-mail: voloshin.developer@gmail.com
  */
 
@@ -51,15 +52,15 @@ public class AbstractEntity implements Serializable {
      */
     @Setter(AccessLevel.PRIVATE)
     @CreationTimestamp
-    @Column(name = "created", columnDefinition = "timestamptz", nullable = false)
+    @Column(name = "created", columnDefinition = "timestamptz", nullable = false, updatable = false)
     private Instant created = Instant.now();
 
     /**
      * Дата и время изменения.
      */
     @Setter(AccessLevel.PRIVATE)
-    @CreationTimestamp
-    @Column(name = "changed", columnDefinition = "timestamptz", nullable = false)
+    @UpdateTimestamp
+    @Column(name = "changed", columnDefinition = "timestamptz")
     private Instant changed;
 
     /**

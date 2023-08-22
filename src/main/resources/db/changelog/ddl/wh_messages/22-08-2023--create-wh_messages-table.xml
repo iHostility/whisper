@@ -2,7 +2,7 @@
 <!--
   ~ Author: Voloshin Denis
   ~ Date: 22-08-2023
-  ~ Time: 19:25
+  ~ Time: 20:54
   ~ E-mail: voloshin.developer@gmail.com
   -->
 <databaseChangeLog
@@ -27,7 +27,7 @@
             <column name="message" type="varchar" remarks="Сообщение">
                 <constraints nullable="false"/>
             </column>
-            <column name="sign" type="varchar" remarks="Сообщение">
+            <column name="sign" type="varchar" remarks="Подпись">
                 <constraints nullable="false"/>
             </column>
             <column name="parent_id" type="UUID" remarks="Оригинальное сообщение"/>

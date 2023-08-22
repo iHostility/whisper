@@ -1,6 +1,7 @@
 package su.hostile.whisper.service.common;
 
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import su.hostile.whisper.exception.EntityNotFoundException;
 import su.hostile.whisper.model.entity.AbstractEntity;
 import su.hostile.whisper.repository.common.CommonRepository;
@@ -14,9 +15,10 @@ import static su.hostile.whisper.meta.ErrorType.ENTITY_NOT_FOUND;
 /*
  * Author: Voloshin Denis
  * Date: 22-08-2023
- * Time: 18:13
+ * Time: 20:54
  * E-mail: voloshin.developer@gmail.com
  */
+@Getter
 public abstract class AbstractService<E extends AbstractEntity, R extends CommonRepository<E>>
         implements CommonService<E> {
 
