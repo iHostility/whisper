@@ -12,11 +12,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
             https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
 
-    <changeSet id="22-08-2023--add-pgcrypto" author="d.voloshin">
-        <sql stripComments="true">
-            CREATE
-            EXTENSION IF NOT EXISTS pgcrypto SCHEMA public
-            <comment>Add pgcrypto (in schema public) for generate public.gen_random_uuid()</comment>
-        </sql>
-    </changeSet>
+    <include file="22-08-2023--01-create-wh_messages-table.xml" relativeToChangelogFile="true"/>
+    <include file="22-08-2023--02-add-fk-wh_messages-table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

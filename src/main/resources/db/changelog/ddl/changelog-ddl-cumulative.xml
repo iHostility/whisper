@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ Author: Voloshin Denis
-  ~ Date: 22-08-2023
-  ~ Time: 20:54
+  ~ Date: 14-03-2025
+  ~ Time: 23:03
   ~ E-mail: voloshin.developer@gmail.com
   -->
+
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
 
-    <include file="classpath:db/changelog/ddl/wh_messages/22-08-2023--create-wh_messages-table.xml"/>
-    <include file="classpath:db/changelog/ddl/wh_messages/22-08-2023--add-fk-wh_messages-table.xml"/>
+    <include file="classpath:db/changelog/ddl/wh_messages/changelog-cumulative.xml"/>
+    <include file="classpath:db/changelog/ddl/wh_campaign/changelog-cumulative.xml"/>
+    <include file="classpath:db/changelog/ddl/wh_client/changelog-cumulative.xml"/>
 
 </databaseChangeLog>

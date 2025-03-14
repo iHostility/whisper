@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Author: Voloshin Denis
+  ~ Date: 14-03-2025
+  ~ Time: 23:03
+  ~ E-mail: voloshin.developer@gmail.com
+  -->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
+
+    <changeSet id="22-08-2023--01-create-wh_client-table" author="d.voloshin">
+        <createTable remarks="Сообщения" schemaName="public" tableName="wh_client">
+            <column name="id" type="UUID" defaultValueComputed="public.gen_random_uuid()">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="wh_client_pk"/>
+            </column>
+            <column name="version" type="INT" defaultValueNumeric="0" remarks="Версия записи">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="TIMESTAMP WITH TIME ZONE" remarks="Дата и время создания"
+                    defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="changed" type="TIMESTAMP WITH TIME ZONE" remarks="Дата и время изменения"/>
+
+            <column name="client_id" type="VARCHAR" remarks="Идентификатор клиента">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="client_login" type="VARCHAR" remarks="Логин клиента">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -14,8 +14,8 @@ import static su.hostile.whisper.meta.ErrorType.ENTITY_NOT_FOUND;
 
 /*
  * Author: Voloshin Denis
- * Date: 22-08-2023
- * Time: 20:54
+ * Date: 14-03-2025
+ * Time: 22:31
  * E-mail: voloshin.developer@gmail.com
  */
 @Getter
