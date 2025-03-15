@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Author: Voloshin Denis
+  ~ Date: 15-03-2025
+  ~ Time: 03:52
+  ~ E-mail: voloshin.developer@gmail.com
+  -->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
+
+    <changeSet id="15-03-2025--01-create-wh_campaign_client-table" author="d.voloshin">
+        <createTable remarks="Отношения клиентов к маркетинговым компаниям" schemaName="public" tableName="wh_campaign_client">
+            <column name="version" type="INT" defaultValueNumeric="0" remarks="Версия записи">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="TIMESTAMP WITH TIME ZONE" remarks="Дата и время создания"
+                    defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="changed" type="TIMESTAMP WITH TIME ZONE" remarks="Дата и время изменения"/>
+
+            <column name="campaign_id" type="UUID" remarks="Идентификатор кампании">
+                <constraints nullable="false"
+                             referencedTableName="wh_campaign"
+                             referencedColumnNames="id"
+                             foreignKeyName="wh_campaign_to_clients_campaign_id_fk"
+                             validateForeignKey="true"
+                />
+            </column>
+            <column name="client_id" type="UUID" remarks="Наименование кампании">
+                <constraints nullable="false"
+                             referencedTableName="wh_client"
+                             referencedColumnNames="id"
+                             foreignKeyName="wh_campaign_to_clients_client_id_fk"
+                             validateForeignKey="true"
+                />
+            </column>
+            <column name="status" type="VARCHAR" remarks="Статус клиента к кампании">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="wh_campaign_client"
+                       columnNames="campaign_id,client_id"
+                       constraintName="wh_campaign_client_pk"
+                       validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>

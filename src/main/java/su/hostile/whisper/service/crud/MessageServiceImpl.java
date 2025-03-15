@@ -11,14 +11,14 @@ import java.util.Optional;
 
 /*
  * Author: Voloshin Denis
- * Date: 14-03-2025
- * Time: 22:31
+ * Date: 15-03-2025
+ * Time: 00:31
  * E-mail: voloshin.developer@gmail.com
  */
 @Service
-public class MessageService extends AbstractService<MessageEntity, MessageRepository> {
+public class MessageServiceImpl extends AbstractService<MessageEntity, MessageRepository> {
 
-    public MessageService(MessageRepository repository) {
+    public MessageServiceImpl(MessageRepository repository) {
         super(repository);
     }
 

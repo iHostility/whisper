@@ -2,6 +2,8 @@ package su.hostile.whisper.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -11,11 +13,12 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /*
  * Author: Voloshin Denis
- * Date: 14-03-2025
- * Time: 23:03
+ * Date: 15-03-2025
+ * Time: 03:19
  * E-mail: voloshin.developer@gmail.com
  */
 @Entity
@@ -28,7 +31,10 @@ import java.io.Serializable;
 public class ClientEntity extends AbstractEntity implements Serializable {
 
     @Column(name = "client_id", nullable = false, unique = true)
-    String campaignId;
+    String clientId;
     @Column(name = "client_login", nullable = false)
-    String campaignName;
+    String clientLogin;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
+    Set<CampaignClientEntity> statuses;
 }

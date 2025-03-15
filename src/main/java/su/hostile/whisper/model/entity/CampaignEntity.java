@@ -2,6 +2,7 @@ package su.hostile.whisper.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -11,11 +12,12 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /*
  * Author: Voloshin Denis
- * Date: 14-03-2025
- * Time: 22:31
+ * Date: 15-03-2025
+ * Time: 01:33
  * E-mail: voloshin.developer@gmail.com
  */
 @Entity
@@ -31,4 +33,7 @@ public class CampaignEntity extends AbstractEntity implements Serializable {
     String campaignId;
     @Column(name = "campaign_name", nullable = false)
     String campaignName;
+
+    @OneToMany(mappedBy = "campaign")
+    Set<CampaignClientEntity> statuses;
 }

@@ -1,4 +1,4 @@
-package su.hostile.whisper.model.dto;
+package su.hostile.whisper.model.dto.message;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 /*
  * Author: Voloshin Denis
  * Date: 14-03-2025
- * Time: 22:31
+ * Time: 23:44
  * E-mail: voloshin.developer@gmail.com
  */
 @Getter

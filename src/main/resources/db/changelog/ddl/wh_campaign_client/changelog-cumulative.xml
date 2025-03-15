@@ -12,9 +12,5 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
             https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.31.xsd">
 
-    <include file="classpath:db/changelog/ddl/wh_messages/changelog-cumulative.xml"/>
-    <include file="classpath:db/changelog/ddl/wh_campaign/changelog-cumulative.xml"/>
-    <include file="classpath:db/changelog/ddl/wh_client/changelog-cumulative.xml"/>
-    <include file="classpath:db/changelog/ddl/wh_campaign_client/changelog-cumulative.xml"/>
-
+    <include file="14-03-2025--01-create-wh_campaign-table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
